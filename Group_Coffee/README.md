@@ -29,7 +29,7 @@
 ![signal routing](https://user-images.githubusercontent.com/94985537/149324416-230a03ea-fdb1-4d14-bd33-b21e2e305ccc.png)
 
 ##  Developers and authors Subproject
- * Nils Temmesfeld
+ * Dennis Schell
  * Jakob Mahn
  * Nils Rottmann
  ## Shopping List
