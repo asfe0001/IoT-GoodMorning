@@ -31,7 +31,7 @@
 ##  Developers and authors Subproject
  * Dennis Schell
  * Xiaotian Sun
- * Nils Rottmann
+ * Xueying Wang 
  ## Shopping List
  *LED RING
  *https://www.reichelt.de/entwicklerboards-neopixel-ring-mit-12-ws2812rgb-leds-debo-led-np12-p235468.html?&trstct=pos_0&nbc=1
