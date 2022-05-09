@@ -30,7 +30,7 @@
 
 ##  Developers and authors Subproject
  * Dennis Schell
- * Jakob Mahn
+ * Xiaotian Sun
  * Nils Rottmann
  ## Shopping List
  *LED RING
