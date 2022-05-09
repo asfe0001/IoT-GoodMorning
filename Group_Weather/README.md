@@ -1,4 +1,4 @@
-# IoT-GoodMorning: Subproject XXX
+# IoT-GoodMorning: Subproject Weather
 
 ## Goals of the Subproject
 -Provide Analog brightness readout for IOT-Greenhouse. Values get published on broker.
