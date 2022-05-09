@@ -1,8 +1,7 @@
-# IoT-GoodMorning: Subproject XXX
+# IoT-GoodMorning: Subproject Bed
 
 ## Goals of the Subproject
--Provide Analog brightness readout for IOT-Greenhouse. Values get published on broker.
--Control a LED via inputs from Broker
+-Count Movements at Night to control strengh of Coffee in the Morning. Values get published on broker.
 
 ## List of Requirements Group03
  * Publish random values to broker with Raspberry PI
@@ -29,10 +28,9 @@
 ![signal routing](https://user-images.githubusercontent.com/94985537/149324416-230a03ea-fdb1-4d14-bd33-b21e2e305ccc.png)
 
 ##  Developers and authors Subproject
- * Nils Wild
- * Vincent Heid
- * Simon Müller
- * Malte Morel
+ * Nils Temmesfeld
+ * Jakob Mahn
+ * Nils Rottmann
  ## Shopping List
  *LED RING
  *https://www.reichelt.de/entwicklerboards-neopixel-ring-mit-12-ws2812rgb-leds-debo-led-np12-p235468.html?&trstct=pos_0&nbc=1
