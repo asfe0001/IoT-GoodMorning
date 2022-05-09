@@ -1,8 +1,8 @@
 # IoT-GoodMorning: Subproject Weather
 
 ## Goals of the Subproject
--Provide Analog brightness readout for IOT-Greenhouse. Values get published on broker.
--Control a LED via inputs from Broker
+-Provide and publish live weather data. 
+
 
 ## List of Requirements Group03
  * Publish random values to broker with Raspberry PI
