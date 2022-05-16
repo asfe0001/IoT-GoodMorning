@@ -12,7 +12,7 @@
 ## Overview Hardware System
 * Raspberry PI 3
 * XXX
-* KY-018 Light Dependat Resistor (LDR)
+* KY-050 Ultrasonic Distance Sensor
 
 ## Preparation for Startup
 * install **paho client** with ``sudo pip install paho-mqtt``
