@@ -1,19 +1,24 @@
-# IoT-GoodMorning: Subproject XXX
+# IoT-GoodMorning: Subproject Management
 
 ## Goals of the Subproject
--Provide Analog brightness readout for IOT-Greenhouse. Values get published on broker.
--Control a LED via inputs from Broker
+- Implementation of the management of the IoT-GoodMorning
+- The management creates and maintains the different databases such as knowledge and control-values
+- The management subscribes to all subsystems and decides, based on their delivered sensor-data, what to do according to the control-value database // TODO: Besser formulieren
 
-## List of Requirements Group03
- * Publish random values to broker with Raspberry PI
- * Get analog readout from KY-018 to RPI via i2c Bus
- * Publish analoge readout to broker
- * Subscribe topic to control LED
+## List of Requirements Subsystem "Bed"
+*
+
+## List of Requirements Subsystem "Coffee"
+*
+
+## List of Requirements Subsystem "Light"
+*
+
+## List of Requirements Subsystem "Weather"
+*
  
 ## Overview Hardware System
-* Raspberry PI 3
-* XXX
-* KY-018 Light Dependat Resistor (LDR)
+* 
 
 ## Preparation for Startup
 * install **paho client** with ``sudo pip install paho-mqtt``
@@ -30,6 +35,6 @@
  * Auxbase-ui
  * Elektr0man
  * teresasch
- ## Shopping List
+
  
 
