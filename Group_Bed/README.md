@@ -4,14 +4,13 @@
 -Count Movements at Night to control strengh of Coffee in the Morning. Values get published on broker.
 
 ## List of Requirements Group03
- * Publish random values to broker with Raspberry PI
+ * Publish percent values to broker with Raspberry PI
  * Get analog readout from KY-018 to RPI via i2c Bus
  * Publish analoge readout to broker
- * Subscribe topic to control LED
+ 
  
 ## Overview Hardware System
 * Raspberry PI 3
-* XXX
 * KY-050 Ultrasonic Distance Sensor
 
 ## Preparation for Startup
@@ -33,9 +32,7 @@
  * Malte Morel
  * Vincent Heid
  ## Shopping List
- *LED RING
+ *KY-050 Ultrasonic Distance Sensor
  *https://www.reichelt.de/entwicklerboards-neopixel-ring-mit-12-ws2812rgb-leds-debo-led-np12-p235468.html?&trstct=pos_0&nbc=1
  
- *LIGHT SENSOR
- *https://www.reichelt.de/entwicklerboards-digitaler-lichtsensor-bh1750-debo-bh-1750-p224217.html?&trstct=pos_6&nbc=1
 
