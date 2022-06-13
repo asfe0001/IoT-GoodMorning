@@ -1,0 +1,116 @@
+#publisher
+import paho.mqtt.client as mqtt
+import time 
+import json
+import math
+
+"""Setup"""
+# Broker
+mqttBroker = "983072be-6928-4aa5-94db-b538ea35100f.ka.bw-cloud-instance.org"
+client = mqtt.Client("Bed")
+client.connect(mqttBroker)
+
+
+
+# coding=utf-8
+# Benötigte Module werden eingefügt und konfiguriert
+import time
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BCM)
+ 
+# Hier können die jeweiligen Eingangs-/Ausgangspins ausgewählt werden
+Trigger_AusgangsPin = 27
+Echo_EingangsPin    = 17
+
+ 
+# Die Pause zwischen den einzelnen Messugnen kann hier in Sekunden eingestellt werden
+sleeptime = 0.8
+ 
+# Hier werden die Ein-/Ausgangspins konfiguriert
+GPIO.setup(Trigger_AusgangsPin, GPIO.OUT)
+GPIO.setup(Echo_EingangsPin, GPIO.IN)
+GPIO.output(Trigger_AusgangsPin, False)
+ 
+# Hauptprogrammschleife
+Bewegungen    = 0;
+Abstandvorher = 0;
+DeltaAbstand  = 0;
+Sensorabstand = 200;      #Abstand Sensor zur Person
+
+
+
+try:
+    while True:
+        # Abstandsmessung wird mittels des 10us langen Triggersignals gestartet
+        GPIO.output(Trigger_AusgangsPin, True)
+        time.sleep(0.00001)
+        GPIO.output(Trigger_AusgangsPin, False)
+ 
+        # Hier wird die Stopuhr gestartet
+        EinschaltZeit = time.time()
+        while GPIO.input(Echo_EingangsPin) == 0:
+            EinschaltZeit = time.time() # Es wird solange die aktuelle Zeit gespeichert, bis das Signal aktiviert wird
+ 
+        while GPIO.input(Echo_EingangsPin) == 1:
+            AusschaltZeit = time.time() # Es wird die letzte Zeit aufgenommen, wo noch das Signal aktiv war
+ 
+        # Die Differenz der beiden Zeiten ergibt die gesuchte Dauer
+        Dauer = AusschaltZeit - EinschaltZeit
+        # Mittels dieser kann nun der Abstand auf Basis der Schallgeschwindigkeit der Abstand berechnet werden
+        Abstand = (Dauer * 34300) / 2
+        
+        # Überprüfung, ob der gemessene Wert innerhalb der zulässigen Entfernung liegt
+        if Abstand < 2 or (round(Abstand) > 3000):
+            # Falls nicht wird eine Fehlermeldung ausgegeben
+            print("Abstand ausserhalb des Messbereich")
+            print("------------------------------")
+        else:
+            # Der Abstand wird auf zwei Stellen hinterm Komma formatiert
+            Abstand = float(format((Dauer * 34300) / 2, '.2f'))
+            # Der berechnete Abstand wird auf der Konsole ausgegeben
+            print("Der Abstand betraegt:", Abstand, "cm")
+            print("------------------------------")
+        
+        # Anzahl an Bewegungen im Bett
+        DeltaAbstand = Abstand-Abstandvorher;
+        
+        if DeltaAbstand < 0:
+            DeltaAbstand = DeltaAbstand*(-1);
+            
+        if DeltaAbstand >5 and DeltaAbstand < Sensorabstand:
+            Bewegungen = Bewegungen + 1;
+            
+        
+        print("Bewegungen: ", Bewegungen)
+        
+        Abstandvorher = Abstand
+        
+        #Bewegungen in Prozent
+        if  Bewegungen >= 100:
+           break
+       
+        
+        # publishen
+        
+            # Update JSON values
+        publisher_bewegungen = {"Schlafqualitaet %": Bewegungen}
+            
+                
+            # Prepare Publisher
+        publisher_bewegungen = json.dumps(publisher_bewegungen)
+            
+            # Publish JSON
+        client.publish("Goodmorning/Bed/Bewegung", publisher_bewegungen)
+ 
+        print("Bewegungen:", publisher_bewegungen)
+ 
+ 
+ 
+ 
+ 
+        # Pause zwischen den einzelnen Messungen
+        time.sleep(sleeptime)
+ 
+# Aufraeumarbeiten nachdem das Programm beendet wurde
+except KeyboardInterrupt:
+    GPIO.cleanup()
