@@ -19,7 +19,7 @@
 
 
 ## Hardware routing
-![signal routing](https://user-images.githubusercontent.com/94985537/149324416-230a03ea-fdb1-4d14-bd33-b21e2e305ccc.png)
+![signal routing](https://github.com/asfe0001/IoT-GoodMorning/blob/main/Group_Bed/Goodmorning.PNG?raw=true)
 
 ##  Developers and authors Subproject
  * Nils Wild
