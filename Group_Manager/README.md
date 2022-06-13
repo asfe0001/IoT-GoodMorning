@@ -20,6 +20,9 @@
 ## Overview System
 ![image](https://user-images.githubusercontent.com/105231455/173392091-920d557d-e55b-4ae7-8f66-1c63ed41ae7d.png)
 
+## Flow System
+![image](https://user-images.githubusercontent.com/105231455/173399571-dd31d401-bf25-4e89-a7cd-baef694c1d02.png)
+
 ## Preparation for Startup
 * install **paho client** with ``sudo pip install paho-mqtt``
 * install **adafruit i2C ADC** with ``sudo pip3 install adafruit-circuitpython-ads1x15``
