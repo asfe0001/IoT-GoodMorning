@@ -1,22 +1,12 @@
 # IoT-GoodMorning: Subproject Weather
 
 ## Goals of the Subproject
--Provide and publish live weather data. 
+-vProvide and publish live weather data. 
 
-
-## List of Requirements Group03
- 
-
-
-
-## Get / control values
-* To control LED, publish value x to brokertopic Greenhouse/Light/LED_Status
-  ``x = 1 : LED On |
-  x = 0 : LED Off``
-* Brightness values get published at Greenhouse/Light/Brightness
-* 
-## Hardware routing
-![signal routing](https://user-images.githubusercontent.com/94985537/149324416-230a03ea-fdb1-4d14-bd33-b21e2e305ccc.png)
+## Steps 
+-vget current weather data using an API (https://openweathermap.org/)
+- filter relevant data
+- publish data for others to use
 
 ##  Developers and authors Subproject
  * Andreas Lazar
